@@ -7,10 +7,10 @@ let orderCount = 0; // Track the number of orders
 
 while (isPizzaAvailable) {
 
-console.log('\n --* ${noOfAvailablePizza} pizzas are remaining *--');
+console.log(`\n --* ${noOfAvailablePizza} pizzas are remaining *--`);
 
 //Read input from command line and convert it to a number
-let order = parseInt(readline.question("How many pizzas would you like to order?"));
+let order = parseInt(readline.question("How many pizzas would you like to order?    "));
 
 //Validation:Check if input is a valid number and greater than 0
 if (isNaN(order) || order <=0) {
@@ -18,9 +18,9 @@ if (isNaN(order) || order <=0) {
     continue;
 }
 
-//Check if we havve enough pizza to fulfill the order
+//Check if we have enough pizza to fulfill the order
 if (order>noOfAvailablePizza) {
-    console.log('Sorry , we only have ${noOfAvailablePizza} left. we will give you ${noOfAvailablePizza} pizza only');
+    console.log(`Sorry , we only have ${noOfAvailablePizza} left. So, we will give you ${noOfAvailablePizza} pizza only`);
     order = noOfAvailablePizza; //cap the order to remaining stock
 }
 
@@ -31,9 +31,9 @@ orderCount++;
 //Stop the loop if sold out
 if (noOfAvailablePizza <= 0) {
     isPizzaAvailable = false;
-    console.log("\nAll pizzas are sold out. Total orders sold: ${orderCount}");
+    console.log(`\nAll pizzas are sold out. Thank you for your order!`);
 }
 }
 
 
-console.log("Total orders fulfilled today: ${orderCount}");
+console.log(`Total orders fulfilled today: ${orderCount}`);
